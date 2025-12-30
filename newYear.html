@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Yangi yilga qancha vaqt qoldi</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #0f172a;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .timer {
+            text-align: center;
+            font-size: 28px;
+        }
+        .time {
+            font-size: 40px;
+            margin-top: 10px;
+            color: #38bdf8;
+        }
+        button{
+            width: 200px;
+            height: 40px;
+            border-radius: 20px;
+            border: none;
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            background: #172341;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="timer">
+    <div>🎄 Yangi yilga qolgan vaqt:</div>
+    <div class="time" id="countdown">Yuklanmoqda...</div>
+    <a href="./index.html"><button>Qaytish</button></a>
+</div>
+
+<script>
+function updateCountdown() {
+    // Qurilmaning hozirgi vaqti
+    const now = new Date();
+
+    // Keyingi yangi yil (1-yanvar)
+    const newYear = new Date(now.getFullYear() + 1, 0, 1, 0, 0, 0);
+
+    const diff = newYear - now;
+
+    if (diff <= 0) {
+        document.getElementById("countdown").innerHTML = "🎉 Yangi yil muborak!";
+        return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("countdown").innerHTML =
+        `${days} kun ${hours} soat ${minutes} minut ${seconds} soniya`;
+}
+
+// Har 1 soniyada yangilanadi
+setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
+
+</body>
+</html>
