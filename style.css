@@ -164,8 +164,8 @@ body {
 }
 
 .firstSide .top .selfImage .rasm img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
 }
 
 .firstSide .top .introduce {
@@ -265,4 +265,5 @@ body {
         font-size: 10px;
     }
 }
+
 
