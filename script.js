@@ -7,11 +7,11 @@ const buySurnameBtn = document.getElementById("buySurnameBtn");
 const profileImg = document.getElementById("profileImg");
 const avatarText = document.getElementById("avatarText");
 const greeting = document.getElementById("greeting");
-const tg = document.getElementById("tgPremiumBtn")
+const tg = document.getElementById("tgPremiumBtn");
 
+// Telegram Premium tugmasi
 nameInp.addEventListener("input", () => {
     const realName = nameInp.value.trim();
-
     if (realName === "Muhammadyusuf") {
         tg.style.display = "block";
     } else {
@@ -20,9 +20,10 @@ nameInp.addEventListener("input", () => {
 });
 
 tg.addEventListener('click', () => {
-    alert("Muhammadyusuf aka faqat sizda bor ekan")
-})
+    alert("Muhammadyusuf aka faqat sizda bor ekan");
+});
 
+// Ismga mos rasm
 const imageMap = {
     "izatullox": "teacher.jpg",
     "qosimjon": "qosimjon.jpg",
@@ -30,11 +31,19 @@ const imageMap = {
     "abduvohid": "abduvohid.jpg",
     "abdullox": "Abdullox.jpg",
     "muhammadaziz": "muhammadaziz.jpg",
-    "umidjon": "dadam.jpg",
+    "umidjon": "umidjon.jpg",
     "oyatillo": "oyatillo.jpg",
     "muhammaddamin": "sherzod.jpg",
     "muhammadamin": "sherzod.jpg",
-    "xalimaxon": "xalimaxon.jpg"
+    "Xalimaxon": "xalimaxon.jpg",
+    "sevaraxon": "sevaraxon.jpg",
+    "oyshaxon": "oyshaxon.jpg",
+    "tabassumxon": "tabassumxon.jpg",
+    "mohiniso": "mohiniso.jpg",
+    "anvarjon": "anvarjon.jpg",
+    "gulchehraxon": "gulchehraxon",
+    "dilshondbek": "dilshodbek.jpg",
+    "bpburjon": "boburjon"
 };
 
 // 1 daqiqa ichida ism kiritilmasa alert
@@ -44,6 +53,7 @@ setTimeout(() => {
     }
 }, 60000);
 
+// Submit tugmasi
 submitBtn.addEventListener("click", () => {
     const nameVal = nameInp.value.trim();
     const surnameVal = surnameInp.value.trim();
@@ -53,27 +63,24 @@ submitBtn.addEventListener("click", () => {
         return;
     }
 
+    // Ism va familya chiqarish
     nameText.textContent = nameVal;
     surnameText.textContent = surnameVal || "";
     buySurnameBtn.style.display = surnameVal ? "none" : "inline-block";
 
     const key = nameVal.toLowerCase();
 
+    // Rasmni tanlash
     if (imageMap[key]) {
-        profileImg.src = imageMap[key];
-        profileImg.style.display = "block";
-        avatarText.textContent = "";
+        profileImg.src = imageMap[key] + "?v=" + new Date().getTime(); // rasm yangilash
     } else {
-        profileImg.style.display = "none";
-        avatarText.textContent = nameVal.charAt(0).toUpperCase() + (surnameVal ? surnameVal.charAt(0).toUpperCase() : "");
+        profileImg.src = "default.png" + "?v=" + new Date().getTime(); // default rasm
     }
+
+    profileImg.style.display = "block"; // rasm ko‘rinadi
+    avatarText.textContent = ""; // bosh harf yo‘q qilinadi
 
     // Greeting matni
     const greetName = nameVal || "Dear person";
     greeting.textContent = `Happy New Year, ${greetName}! Wishing you joy, success, and happiness in the coming year!`;
 });
-
-
-
-
-
