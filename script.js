@@ -43,7 +43,7 @@ const imageMap = {
     "anvarjon": "anvarjon.jpg",
     "gulchehraxon": "gulchehraxon",
     "dilshondbek": "dilshodbek.jpg",
-    "boburjon": "boburjon"
+    "boburjon": "boburjon.jpg"
 };
 
 // 1 daqiqa ichida ism kiritilmasa alert
@@ -84,6 +84,7 @@ submitBtn.addEventListener("click", () => {
     const greetName = nameVal || "Dear person";
     greeting.textContent = `Happy New Year, ${greetName}! Wishing you joy, success, and happiness in the coming year!`;
 });
+
 
 
 
