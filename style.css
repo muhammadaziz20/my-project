@@ -123,6 +123,7 @@ body {
     padding-right: 20px;
     padding-top: 10px;
     padding-bottom: 15px;
+    overflow: hidden;
 }
 
 .firstSide {
@@ -265,5 +266,6 @@ body {
         font-size: 10px;
     }
 }
+
 
 
