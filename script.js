@@ -29,7 +29,7 @@ const imageMap = {
     "qosimjon": "qosimjon.jpg",
     "muhammadyusuf": "muhammadyusuf.jpg",
     "abduvohid": "abduvohid.jpg",
-    "abdullox": "Abdullox.jpg",
+    "abdullox": "abdullox.jpg",
     "muhammadaziz": "muhammadaziz.jpg",
     "umidjon": "dadam.jpg",
     "oyatillo": "oyatillo.jpg",
@@ -84,6 +84,7 @@ submitBtn.addEventListener("click", () => {
     const greetName = nameVal || "Dear person";
     greeting.textContent = `Happy New Year, ${greetName}! Wishing you joy, success, and happiness in the coming year!`;
 });
+
 
 
 
