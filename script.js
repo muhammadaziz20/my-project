@@ -85,3 +85,4 @@ submitBtn.addEventListener("click", () => {
     greeting.textContent = `Happy New Year, ${greetName}! Wishing you joy, success, and happiness in the coming year!`;
 });
 
+
